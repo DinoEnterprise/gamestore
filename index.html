@@ -1,65 +1,80 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Talha - Ping Pong Game</title>
-    <!-- Add the Bootstrap CSS file -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request Lagu Suno AI</title>
 
-    <link rel="icon" href="https://i.ibb.co/M6KTWnf/pic.jpg" />
+<style>
+    body {
+        background: #f4f4f4;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+    .container {
+        max-width: 450px;
+        margin: auto;
+        background: #fff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    label {
+        font-weight: bold;
+    }
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+    button {
+        width: 100%;
+        padding: 12px;
+        background: #4F46E5;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    button:hover {
+        background: #4338CA;
+    }
+</style>
 
-    <!-- 👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻-->
-    <!-- Also uploaded the demo of this code in a gif : https://c.tenor.com/x8v1oNUOmg4AAAAd/tenor.gif-->
-    <!-- 👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻-->
+</head>
+<body>
 
-    <!-- 👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻-->
-    <!-- More html-css-js Games Calculators Games Cards Elements Projects on https://www.github.com/he-is-talha -->
-    <!-- 👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻-->
+<div class="container">
+    <h2>Request Pembuatan Lagu</h2>
 
-    <!-- Add the Bootstrap JavaScript file -->
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
 
-    <link rel="stylesheet" href="style.css" />
-    <style>
-      canvas {
-        border: 1px solid black;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <canvas id="canvas" width="600" height="400"></canvas>
-    </div>
-    <div class="button">
-      <button id="start-btn" class="btn">Start</button>
-      <button id="pause-btn" class="btn">Pause</button>
-      <button id="restart-btn" class="btn">Restart</button>
-    </div>
-    <p class="control">Control: Player Left(W and S) | Player Right(↑ and ↓)</p>
-    <!-- Add a modal element with an ID -->
-    <div class="modal" tabindex="-1" role="dialog" id="message-modal">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-            <h5 id="message"></h5>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              id="message-modal-close"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+        <label>Nama Kamu:</label>
+        <input type="text" name="name" required>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+        <label>Email Kamu:</label>
+        <input type="email" name="email" required>
+
+        <label>Judul Lagu:</label>
+        <input type="text" name="song_title" required>
+
+        <label>Lirik Lagu:</label>
+        <textarea name="lyrics" rows="6" required></textarea>
+
+        <label>Request Tambahan (opsional):</label>
+        <textarea name="extra" rows="4"></textarea>
+
+        <button type="submit">Kirim Request</button>
+    </form>
+</div>
+
+</body>
 </html>
